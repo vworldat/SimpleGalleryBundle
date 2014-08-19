@@ -8,30 +8,13 @@ params:
     fields:
         ImageFile:
             dbType:     BLOB
-            formType:   single_upload
+            formType:   afe_single_upload
             addFormOptions:
                 previewFilter:  gallery_thumb
                 
-#        GeneralAttachmentsCollection:
-#            dbType:     collection
-#            formType:   collection_upload
-#            addFormOptions:
-#                nameable:           true
-##                acceptFileTypes:    /^image\/(gif|jpeg|png)$/
-#                acceptFileTypes:    /^.*$/
-#                previewMaxWidth:    80
-#                previewMaxHeight:   60
-#                allow_add:          true
-#                allow_delete:       true
-#                error_bubbling:     false
-#                by_reference:       false
-#                type:               \c33s\AttachmentBundle\Form\Type\Attachment\EditType
-#                options:
-#                    data_class:     c33s\AttachmentBundle\Model\Attachment
-
         ItemsCollection:
             dbType:     collection
-            formType:   collection_upload
+            formType:   afe_collection_upload
             addFormOptions:
                 nameable:           false
                 sortable:           true
