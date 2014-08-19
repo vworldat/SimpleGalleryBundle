@@ -1,0 +1,3 @@
+{% extends_admingenerated "C33sSimpleGalleryBundle:GalleryList:row.html.twig" %}
+
+{% block list_td_column_image %}{{ Gallery.image|att_image('admin_thumb') }}{% endblock list_td_column_image %}

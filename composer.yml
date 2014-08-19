@@ -1,0 +1,28 @@
+name:           c33s/simple-gallery-bundle
+type:           symfony-bundle
+description:    Simple drop-in propel / admingenerator galleries for Symfony2
+#keywords: []
+homepage: "https://github.com/vworldat/SimpleGalleryBundle"
+license:       ["MIT"]
+
+authors:
+  - name:       David
+    email:      office@web-emerge.com
+    homepage:   'http://web-emerge.com/'
+
+autoload:
+    psr-0:
+        'C33s\SimpleGalleryBundle': ''
+
+target-dir: 'C33s/SimpleGalleryBundle'
+
+minimum-stability: stable
+
+require:
+    php: '>=5.3.3'
+    
+    propel/propel-bundle:                               '~1.2'
+    cedriclombardot/admingenerator-generator-bundle:    '~1.0'
+    c33s/attachment-admin-bundle:                       '~0.4'
+
+    

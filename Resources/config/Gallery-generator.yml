@@ -1,0 +1,106 @@
+generator: admingenerator.generator.propel
+params:
+    model: C33s\SimpleGalleryBundle\Model\Gallery
+    namespace_prefix: C33s
+    concurrency_lock: ~
+    bundle_name: SimpleGalleryBundle
+    pk_requirement: ~
+    fields:
+        ImageFile:
+            dbType:     BLOB
+            formType:   single_upload
+            addFormOptions:
+                previewFilter:  gallery_thumb
+                
+#        GeneralAttachmentsCollection:
+#            dbType:     collection
+#            formType:   collection_upload
+#            addFormOptions:
+#                nameable:           true
+##                acceptFileTypes:    /^image\/(gif|jpeg|png)$/
+#                acceptFileTypes:    /^.*$/
+#                previewMaxWidth:    80
+#                previewMaxHeight:   60
+#                allow_add:          true
+#                allow_delete:       true
+#                error_bubbling:     false
+#                by_reference:       false
+#                type:               \c33s\AttachmentBundle\Form\Type\Attachment\EditType
+#                options:
+#                    data_class:     c33s\AttachmentBundle\Model\Attachment
+
+        ItemsCollection:
+            dbType:     collection
+            formType:   collection_upload
+            addFormOptions:
+                nameable:           false
+                sortable:           true
+                sortable_field:     SortableRank
+                editable:           [ Title, Description, IsListed ]
+                type:               \C33s\SimpleGalleryBundle\Form\Type\GalleryItem\EditType
+                previewMaxWidth:    80
+                previewMaxHeight:   60
+                acceptFileTypes:    /^image\/(gif|jpeg|png)$/
+                allow_add:          true
+                allow_delete:       true
+                error_bubbling:     false
+                by_reference:       false
+                options:
+                    data_class:     C33s\SimpleGalleryBundle\Model\GalleryItem
+                
+    object_actions:
+        delete: ~
+    batch_actions:
+        delete: ~
+builders:
+    list:
+        params:
+            title: Galleries
+            display: ~
+            actions:
+                new: ~
+            object_actions:
+                edit: ~
+                delete: ~
+    filters:
+        params:
+            display: []
+    new:
+        params:
+            title: New gallery
+            display:
+                - Title
+                - Description
+                - ImageFile
+            actions:
+                save: ~
+                save-and-list: ~
+                list: ~
+    edit:
+        params:
+            title: "You're editing the object \"%object%\"|{ %object%: Gallery.title }|"
+            display:
+                - Title
+                - Description
+                - ImageFile
+                - IsListed
+#                - GeneralAttachmentsCollection
+                - ItemsCollection
+                
+            actions:
+                save: ~
+                save-and-list: ~
+                list: ~
+    show:
+        params:
+            title: "You're viewing the object \"%object%\"|{ %object%: Gallery.title }|"
+            display: ~
+            actions:
+                list: ~
+                new: ~
+    actions:
+        params:
+            object_actions:
+                delete: ~
+            batch_actions:
+                delete: ~

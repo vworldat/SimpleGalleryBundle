@@ -1,0 +1,10 @@
+_C33sSimpleGalleryBundle_admin_gen_gallery:
+    resource: "@C33sSimpleGalleryBundle/Controller/Gallery/"
+    type:     admingenerator
+    prefix:   /galleries
+
+_C33sSimpleGalleryBundle_admin_gen_gallery_item:
+    resource: "@C33sSimpleGalleryBundle/Controller/GalleryItem/"
+    type:     admingenerator
+    prefix:   /items
+    
