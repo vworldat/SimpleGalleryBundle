@@ -1,1 +1,23 @@
 {% extends_admingenerated "C33sSimpleGalleryBundle:GalleryEdit:index.html.twig" %}
+
+{% block javascripts %}
+{{ parent() }}
+
+<script type="text/javascript">
+
+// hack-fix because some form extensions code requires this variable
+if ('undefined' == typeof CKEDITOR)
+{
+    var CKEDITOR = {
+        instances: []
+    };
+}
+
+$(function() {
+    // replace bootstrap2 icons with font-awesome icons
+    $('.handle.icon-sort').removeClass('icon-sort icon-move').addClass('fa fa-arrows fa-2x');
+});
+
+</script>
+
+{% endblock javascripts %}
