@@ -1,8 +1,9 @@
 <?php
 
-namespace c33s\SimpleGalleryBundle\Twig\Extension;
+namespace C33s\SimpleGalleryBundle\Twig\Extension;
 
 use C33s\SimpleGalleryBundle\Model\GalleryQuery;
+
 class GalleryExtension extends \Twig_Extension
 {
     /**
@@ -11,7 +12,7 @@ class GalleryExtension extends \Twig_Extension
     public function __construct()
     {
     }
-    
+
     public function getFunctions()
     {
         return array(
@@ -19,7 +20,7 @@ class GalleryExtension extends \Twig_Extension
             new \Twig_SimpleFunction('listed_galleries', array($this, 'getListedGalleries')),
         );
     }
-    
+
     public function getGallery($name)
     {
         return GalleryQuery::create()
@@ -27,7 +28,7 @@ class GalleryExtension extends \Twig_Extension
             ->findOne()
         ;
     }
-    
+
     public function getListedGalleries()
     {
         return GalleryQuery::create()
@@ -36,7 +37,7 @@ class GalleryExtension extends \Twig_Extension
             ->find()
         ;
     }
-    
+
     public function getName()
     {
         return 'c33s_gallery';
