@@ -1,5 +1,6 @@
 parameters:
-    c33s_gallery.twig.extension.class: C33s\SimpleGalleryBundle\Twig\Extension\GalleryExtension
+    c33s_gallery.twig.extension.class:      C33s\SimpleGalleryBundle\Twig\Extension\GalleryExtension
+    c33s_gallery.form.type.upload.class:    C33s\SimpleGalleryBundle\Form\Type\GalleryItem\UploadType
 
 services:
     c33s_gallery.twig.extension:
@@ -7,3 +8,8 @@ services:
 #        arguments: [@service_id, "plain_value", %parameter%]
         tags:
             - { name: twig.extension }
+
+    c33s_gallery.form.type.upload:
+        class:      "%c33s_gallery.form.type.upload.class%"
+        tags:
+            - { name: form.type, alias: c33s_gallery_upload }

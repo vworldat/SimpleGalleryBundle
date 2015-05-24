@@ -22,7 +22,4 @@ require:
     php: '>=5.3.3'
     
     propel/propel-bundle:                               '~1.2'
-    cedriclombardot/admingenerator-generator-bundle:    '~1.0'
-    c33s/attachment-admin-bundle:                       '~0.4'
-
-    
+    c33s/attachment-bundle:                             '~0.5'

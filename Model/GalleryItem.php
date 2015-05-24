@@ -17,7 +17,7 @@ class GalleryItem extends BaseGalleryItem implements UploadCollectionFileInterfa
     {
         return $this->getImageFile()->getSize();
     }
-    
+
     /**
      * Set governing entity (Gallery object)
      *
@@ -27,7 +27,7 @@ class GalleryItem extends BaseGalleryItem implements UploadCollectionFileInterfa
     {
         return $this->setGallery($parent);
     }
-    
+
     /**
      * Set uploaded file
      *
@@ -37,7 +37,7 @@ class GalleryItem extends BaseGalleryItem implements UploadCollectionFileInterfa
     {
         return $this->setImageFile($file);
     }
-    
+
     /**
      * Get file
      *
@@ -47,7 +47,7 @@ class GalleryItem extends BaseGalleryItem implements UploadCollectionFileInterfa
     {
         return $this->getImageFile();
     }
-    
+
     /**
      * Get file web path (used by upload form types)
      *
@@ -57,7 +57,7 @@ class GalleryItem extends BaseGalleryItem implements UploadCollectionFileInterfa
     {
         return $this->getImageFileWebPath();
     }
-    
+
     /**
      * Return true if file thumbnail should be generated
      *
@@ -67,7 +67,7 @@ class GalleryItem extends BaseGalleryItem implements UploadCollectionFileInterfa
     {
         return true;
     }
-    
+
     /**
      * Clean up internal collections prior to serializing
      * Avoids recursive loops that turn into segmentation faults when serializing
@@ -75,11 +75,11 @@ class GalleryItem extends BaseGalleryItem implements UploadCollectionFileInterfa
     public function __sleep()
     {
         $keys = parent::__sleep();
-        
+
         if(($key = array_search('aNewImageFile', $keys)) !== false) {
             unset($keys[$key]);
         }
-        
+
         return $keys;
     }
 }
