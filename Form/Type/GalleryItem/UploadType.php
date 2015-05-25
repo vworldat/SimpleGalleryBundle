@@ -25,9 +25,10 @@ class UploadType extends AbstractType
             'required' => false,
         ));
 
-        $builder->add('isListed', 'checkbox', array(
-            'required' => false,
-        ));
+        // this is currently not working
+//         $builder->add('isListed', 'checkbox', array(
+//             'required' => false,
+//         ));
     }
 
     public function getName()
